@@ -54,7 +54,7 @@ func cashMachine(value: Double) -> String {
             }
         }
         
-        if Int(remainingAmount - value) != 0 {
+        if Int(remainingAmount) != 0 {
             result = "Por gentileza, informa valores compativeis com a maquina"
         }
     
