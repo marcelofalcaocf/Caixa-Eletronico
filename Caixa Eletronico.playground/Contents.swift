@@ -47,6 +47,18 @@ func cashMachine(value: Double) -> String {
         if Int(remainingAmount/availableValues[3]) > 0 {
             twoCount = Int(remainingAmount/availableValues[3])
             remainingAmount -= Double(twoCount) * availableValues[3]
+            
+            if remainingAmount != 0 {
+                remainingAmount = value
+                fiftyCount = 0
+                tenCount = 0
+                fiveCount = 0
+                twoCount = 0
+                
+                twoCount = Int(remainingAmount/availableValues[3])
+                remainingAmount -= Double(twoCount) * availableValues[3]
+            }
+            
             if fiveCount > 0 || tenCount > 0 || twoCount > 0 {
                 result += ", \(twoCount) nota(s) de 2"
             } else {
@@ -61,6 +73,6 @@ func cashMachine(value: Double) -> String {
     return result
 }
 
-print(cashMachine(value: 8))
+print(cashMachine(value: 18))
 
 
